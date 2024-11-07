@@ -95,19 +95,6 @@ void MapDestroy(Map* map)
 }
 
 
-MapPair* MapCreatePair(const char* key, const char* val)
-{
-    MapPair* p = malloc(sizeof(MapPair));
-    p->key   = malloc(sizeof(char) * strlen(key) + 1);
-    strcpy(p->key, key);
-
-    p->value   = malloc(sizeof(char) * strlen(val) + 1);
-    strcpy(p->value, val);
-
-    return p;
-}
-
-
 void MapPrintPair(Map* map, char* key)
 {
     MapPair* pair = MapGet(map, key);
