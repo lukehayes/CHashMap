@@ -49,17 +49,19 @@ void MapInsert(Map* map, char* key, char* value)
 {
     int modHash = MapHashPair(map, key);
 
-    MapPair pair = {.key = (char*)key, .value = (char*)value};
-    memcpy(&map->data[modHash], &pair, sizeof(MapPair));
-
-    map->size++;
+    if (!MapKeyExists(map, key))
+    {
+        MapPair pair = {.key = (char*)key, .value = (char*)value};
+        memcpy(&map->data[modHash], &pair, sizeof(MapPair));
+        map->size++;
+    }
 }
+
 
 void MapInsertPair(Map* map, MapPair* pair)
 {
     MapInsert(map, pair->key, pair->value);
 }
-
 
 void MapRemove(Map* map, char* key)
 {
@@ -94,15 +96,24 @@ void MapDestroy(Map* map)
     map = NULL;
 }
 
+
+bool MapKeyExists(Map* map, const char* key)
+{
+    return (MapGet(map, key)->key) ?  1 : 0;
+}
+
+
 size_t MapGetCapacity(Map* map)
 {
     return map->capacity;
 }
 
+
 size_t MapGetSize(Map* map)
 {
     return map->size;
 }
+
 
 void MapPrintPair(Map* map, char* key)
 {
@@ -117,7 +128,6 @@ void MapPrintPair(Map* map, char* key)
 }
 
 
-
 void MapPrint(Map* map)
 {
     for (int i = 0; i <= map->capacity -1; ++i)
@@ -130,7 +140,6 @@ void MapPrint(Map* map)
         }
     }
 }
-
 
 
 long

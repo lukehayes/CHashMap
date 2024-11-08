@@ -67,6 +67,16 @@ void MapInsert(Map* map, char* key, char* value);
  */
 void MapInsertPair(Map* map, MapPair* pair);
 
+/**
+ * Check if a key exists in the map.
+ *
+ * @param Map* map.
+ * @param const char* key.
+ *
+ * @return bool.
+ */
+bool MapKeyExists(Map* map, const char* key);
+
 
 /**
  * Remove a value from the Map.

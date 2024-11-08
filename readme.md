@@ -75,7 +75,7 @@ MapPrintValue(map, "speed"); // Print the specific value from the HashMap.
 ### TODO
 
 - [ ] Name collisions aren't dealt with at all. Currently a larger initial size solves this problem *most* of the time.
-- [ ] Check if key already exists in the map.
+- [x] Check if key already exists in the map.
 - [ ] Add way to remove a row from the map.
 
 ---
