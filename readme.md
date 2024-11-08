@@ -20,7 +20,6 @@ Retreive a value from the HashMap:
 
 ```
     MapPair* data = MapGet(map, "speed"); // Should return 100 as a char*
-
 ```
 
 Deallocate the entire map from memory:
@@ -67,5 +66,4 @@ typedef struct Map
     size_t capacity;
     size_t size;
 } Map;
-
 ```
