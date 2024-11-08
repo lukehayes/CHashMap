@@ -101,6 +101,26 @@ void MapDestroy(Map* map);
 
 
 /**
+ * Get the capacity (maximum number of elements) of the map.
+ *
+ * @param Map* map.
+ *
+ * @return size_t.
+ */
+size_t MapGetCapacity(Map* map);
+
+
+/**
+ * Get the size (current number on non-null elements) inside the map.
+ *
+ * @param Map* map.
+ *
+ * @return size_t.
+ */
+size_t MapGetSize(Map* map);
+
+
+/**
  * A hashing function - all credit goes to: http://www.cse.yorku.ca/~oz/hash.html
  *
  * @param unsigned char* str    The string to be hash.

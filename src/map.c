@@ -94,6 +94,15 @@ void MapDestroy(Map* map)
     map = NULL;
 }
 
+size_t MapGetCapacity(Map* map)
+{
+    return map->capacity;
+}
+
+size_t MapGetSize(Map* map)
+{
+    return map->size;
+}
 
 void MapPrintPair(Map* map, char* key)
 {

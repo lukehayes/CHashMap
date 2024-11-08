@@ -50,6 +50,18 @@ Deallocate the entire map from memory:
 MapDestroy(map);
 ```
 
+Get the capacity (maximum number of elements):
+
+```
+MapGetCapacity(map);
+```
+
+Get the size (current number of non-null elements inside the map):
+
+```
+MapGetSize(map);
+```
+
 #### Helper functions
 
 
@@ -63,6 +75,7 @@ MapPrintValue(map, "speed"); // Print the specific value from the HashMap.
 ### TODO
 
 - [ ] Name collisions aren't dealt with at all. Currently a larger initial size solves this problem *most* of the time.
+- [ ] Check if key already exists in the map.
 - [ ] Add way to remove a row from the map.
 
 ---
