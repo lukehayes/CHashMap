@@ -18,6 +18,14 @@ Alternatively:
 
 ### Usage
 
+> [!NOTE]
+> As stated above, this implementation is very naive but it does work. Use at your own peril.
+
+> [!TIP]
+> I welcome pull requests.
+
+---
+
 Create a new instance of the HashMap:
 
 ```
@@ -52,11 +60,17 @@ MapPrint(map); // Print the entire map
 MapPrintValue(map, "speed"); // Print the specific value from the HashMap.
 ```
 
+### TODO
+
+- [ ] Name collisions aren't dealt with at all. Currently a larger initial size solves this problem *most* of the time.
+- [ ] Add way to remove a row from the map.
+
+---
 
 ### Implementation
 
 Values are stored in a `MapPair` struct. It has two members - key and a value
-and they are both void*. All data should be stored as a `char*` and the user
+and they are both `void*`. All data should be stored as a `char*` and the user
 should use something like `atoi()` if the data is stored as an `int` for example.
 
 ```
