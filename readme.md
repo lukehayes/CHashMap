@@ -2,49 +2,62 @@
 
 This project is a simple Hash Map data structure for C. It is a VERY niave implementation but it works for my purposes.
 
+### Building
+
+You can just take `map.h` and `map.c` and add them to your own projects then build them with a makefile
+or CMake etc.
+
+Alternatively:
+
+    * clone the project
+    * cd in to project
+    * mkdir build
+    * cd build
+    * cmake ..
+    * use the binary that has been built
+
 ### Usage
 
 Create a new instance of the HashMap:
 
 ```
-    Map* map = MapCreate(10);
+Map* map = MapCreate(10);
 ```
 
 Insert a new value into the HashMap:
 
 ```
-    MapInsert(map, "speed", "100");
+MapInsert(map, "speed", "100");
 ```
 
 Retreive a value from the HashMap:
 
 ```
-    MapPair* data = MapGet(map, "speed"); // Should return 100 as a char*
+MapPair* data = MapGet(map, "speed"); // Should return 100 as a char*
 ```
 
 Deallocate the entire map from memory:
 
 ```
-    MapDestroy(map);
+MapDestroy(map);
 ```
 
-##### Helper functions
+#### Helper functions
 
 
 Print a map to stdout for visualisation:
 
 ```
-    MapPrint(map); // Print the entire map
-    MapPrintValue(map, "speed"); // Print the specific value from the HashMap.
+MapPrint(map); // Print the entire map
+MapPrintValue(map, "speed"); // Print the specific value from the HashMap.
 ```
 
 
-
-#### Implementation
+### Implementation
 
 Values are stored in a `MapPair` struct. It has two members - key and a value
 and they are both void*. All data should be stored as a `char*` and the user
-should use something like `atoi()` if the data stored is an `int` for example.
+should use something like `atoi()` if the data is stored as an `int` for example.
 
 ```
 typedef struct MapPair
