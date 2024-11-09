@@ -3,12 +3,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+// -----------------------------------------------------------------------------
+// Types
+// -----------------------------------------------------------------------------
 typedef struct MapPair
 {
     void* key;
     void* value;
 } MapPair;
+
 
 typedef struct Map
 {
@@ -17,6 +20,10 @@ typedef struct Map
     size_t size;
 } Map;
 
+
+// -----------------------------------------------------------------------------
+// Static functions
+// -----------------------------------------------------------------------------
 static int MapHashPair(Map* map, char* str)
 {
     long hash = MapHash(str);
@@ -24,6 +31,9 @@ static int MapHashPair(Map* map, char* str)
     return modHash;
 }
 
+// -----------------------------------------------------------------------------
+// Functions
+// -----------------------------------------------------------------------------
 Map* MapCreate(size_t initial_size)
 {
     Map* map = malloc(sizeof(Map));
